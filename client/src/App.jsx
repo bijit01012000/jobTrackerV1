@@ -15,6 +15,7 @@ import {
   Profile,
   Admin,
   EditJob,
+  SpecialNote
 } from './pages';
 
 import { action as registerAction } from './pages/Register';
@@ -49,7 +50,7 @@ const queryClient = new QueryClient({
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <HomeLayout />,
     errorElement: <Error />,
     children: [
@@ -58,17 +59,17 @@ const router = createBrowserRouter([
         element: <Landing />,
       },
       {
-        path: 'register',
+        path: "register",
         element: <Register />,
         action: registerAction,
       },
       {
-        path: 'login',
+        path: "login",
         element: <Login />,
         action: loginAction(queryClient),
       },
       {
-        path: 'dashboard',
+        path: "dashboard",
         element: <DashboardLayout queryClient={queryClient} />,
         loader: dashboardLoader(queryClient),
         children: [
@@ -78,34 +79,39 @@ const router = createBrowserRouter([
             action: addJobAction(queryClient),
           },
           {
-            path: 'stats',
+            path: "stats",
             element: <Stats />,
             loader: statsLoader(queryClient),
             errorElement: <ErrorElement />,
           },
           {
-            path: 'all-jobs',
+            path: "specialNote",
+            element: <SpecialNote />,
+            errorElement: <ErrorElement />,
+          },
+          {
+            path: "all-jobs",
             element: <AllJobs />,
             loader: allJobsLoader(queryClient),
             errorElement: <ErrorElement />,
           },
           {
-            path: 'profile',
+            path: "profile",
             element: <Profile />,
             action: profileAction(queryClient),
           },
           {
-            path: 'admin',
+            path: "admin",
             element: <Admin />,
             loader: adminLoader,
           },
           {
-            path: 'edit-job/:id',
+            path: "edit-job/:id",
             element: <EditJob />,
             loader: editJobLoader(queryClient),
             action: editJobAction(queryClient),
           },
-          { path: 'delete-job/:id', action: deleteJobAction(queryClient) },
+          { path: "delete-job/:id", action: deleteJobAction(queryClient) },
         ],
       },
     ],

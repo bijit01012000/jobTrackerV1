@@ -20,18 +20,26 @@ export const action = async ({ request }) => {
 const Register = () => {
   return (
     <Wrapper>
-      <Form method='post' className='form'>
-        <Logo />
+      <Form method="post" className="form">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: "1rem",
+          }}
+        >
+          <Logo />
+        </div>
         <h4>Register</h4>
-        <FormRow type='text' name='name' />
-        <FormRow type='text' name='lastName' labelText='last name' />
-        <FormRow type='text' name='location' />
-        <FormRow type='email' name='email' />
-        <FormRow type='password' name='password' />
+        <FormRow type="text" name="name" />
+        <FormRow type="text" name="lastName" labelText="last name" />
+        <FormRow type="text" name="location" />
+        <FormRow type="email" name="email" />
+        <FormRow type="password" name="password" />
         <SubmitBtn />
         <p>
           Already a member?
-          <Link to='/login' className='member-btn'>
+          <Link to="/login" className="member-btn">
             Login
           </Link>
         </p>

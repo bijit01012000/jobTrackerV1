@@ -1,7 +1,7 @@
 
 
 const Logo = () => {
-  return <h2>Job Tracker</h2>;
+  return <h4>Job Tracker</h4>;
 };
 
 export default Logo;
