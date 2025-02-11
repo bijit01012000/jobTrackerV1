@@ -38,18 +38,20 @@ const Login = () => {
   };
   return (
     <Wrapper>
-      <Form method='post' className='form'>
-        <Logo />
+      <Form method="post" className="form">
+        <div style={{display:'flex', justifyContent:'center', marginBottom:'1rem'}}>
+          <Logo />
+        </div>
         <h4>login</h4>
-        <FormRow type='email' name='email' />
-        <FormRow type='password' name='password' />
+        <FormRow type="email" name="email" />
+        <FormRow type="password" name="password" />
         <SubmitBtn />
-        <button type='button' className='btn btn-block' onClick={loginDemoUser}>
+        <button type="button" className="btn btn-block" onClick={loginDemoUser}>
           explore the app
         </button>
         <p>
           Not a member yet?
-          <Link to='/register' className='member-btn'>
+          <Link to="/register" className="member-btn">
             Register
           </Link>
         </p>
