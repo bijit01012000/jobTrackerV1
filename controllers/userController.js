@@ -14,6 +14,7 @@ export const getApplicationStats = async (req, res) => {
   const jobs = await Job.countDocuments();
   res.status(StatusCodes.OK).json({ users, jobs });
 };
+
 export const updateUser = async (req, res) => {
   const newUser = { ...req.body };
   delete newUser.password;

@@ -36,6 +36,7 @@ export const checkDefaultTheme = () => {
   return isDarkTheme;
 };
 
+
 checkDefaultTheme();
 
 const queryClient = new QueryClient({

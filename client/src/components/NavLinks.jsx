@@ -4,11 +4,13 @@ import { NavLink } from 'react-router-dom';
 
 const NavLinks = ({ isBigSidebar }) => {
   const { toggleSidebar, user } = useDashboardContext();
+  console.log('hi');
+
   return (
     <div className='nav-links'>
       {links.map((link) => {
         const { text, path, icon } = link;
-        const { role } = user;
+        const { role , } = user;
         if (path === 'admin' && role !== 'admin') return;
         return (
           <NavLink

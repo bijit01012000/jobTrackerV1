@@ -19,7 +19,7 @@ export const loader = (queryClient) => async () => {
 const Stats = () => {
   const { data } = useQuery(statsQuery);
   const { defaultStats, monthlyApplications } = data;
-
+  sessionStorage.setItem('key1', '12345');
   return (
     <>
       <StatsContainer defaultStats={defaultStats} />
